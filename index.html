@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+#home {
+background-color: transparent;
+}
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+::-webkit-scrollbar
+{width : 10px;}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(157, 206, 247);
+}
+::-webkit-scrollbar-track{
+    background-color: var(black);
+    width: 10px;
+}
+.scroll-button a{
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    color: white;
+    padding: 7px 12px;
+    font-size: 40px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+.scroll-button a:hover{
+    color:rgb(157, 206, 247);
+}
+
+html{
+    --html_progress:0deg;
+    --css_progress:0deg;
+    --js_progress:0deg;
+    --python_progress:0deg;
+}
+@property --html_progress{
+    syntax: '<angle>' ;
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --css_progress{
+    syntax: '<angle>' ;
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --js_progress{
+    syntax: '<angle>' ;
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@property --python_progress{
+    syntax: '<angle>' ;
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  border: 5px ;
+  box-shadow: 0 4px 8px white;
+}
+
+
+@media (max-width: 768px) {
+  #about {
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-bottom: 20px;
+  }
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #000 calc(var(--percentage) * 1%), 
+        #ddd calc(var(--percentage) * 1%)
+    );
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+animation: animate 3s linear forwards;
+
+}
+
+.circle::before {
+    content: attr(data-percentage) '%';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.circle[data-percentage="90"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--html_progress), white 0turn);
+}
+
+.circle[data-percentage="86"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--css_progress), white 0turn);
+}
+
+.circle[data-percentage="78"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--js_progress), white 0turn);
+}
+
+.circle[data-percentage="50"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--python_progress), white 0turn);
+}
+
+h4 {
+    margin-top: 20px;
+    font-weight: normal;
+    color: #fff;
+}
+
+@keyframes animate{
+    100%{
+        --html_progress: calc(calc(90 / 100) * 360deg);
+        --css_progress: calc(calc(86 / 100) * 360deg);
+        --js_progress: calc(calc(78 / 100) * 360deg);
+        --python_progress: calc(calc(50/ 100) * 360deg);
+    }
+}
+
+
+#projects {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+p{
+    font-size: 25px;
+    align-content: center;
+   
+}
+h1 {
+    font-size: 99px;
+    color: white;
+}
+
+
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 55px;
+    margin-top: -0%;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+h2.text-center {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 4px 10px #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    background-color: rgb(157, 206, 247);
+}
+
+.card-img-top {
+    width: 98.5%; 
+    margin-top: 2px;  
+    object-fit: contain;
+    object-position:top;
+    border-radius: 10px;
+    border-color: var(black);
+    border-style: solid;
+    box-shadow: 0px 0px 20px var(black);
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+.card-text {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+.card-text:hover{
+    color: #000;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 15px;
+}
+h5 {
+    color: #fff;
+    font-size: 30px;
+}
+
+a.social-icon {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+a.social-icon:hover {
+    color: blue;
+}
+
+
+@media (max-width: 767.98px) {
+    .card-img-top {
+        height: auto;
+    }
+}
+
+
+
+.contact-form h2{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 45px;
+    color: white;
+}
+.contact-form form{
+    max-width: 45em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+}
+.contact-form form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-form form .input-box input,
+.contact-form form textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    background: rgb(241, 241, 241);
+    border-radius: .8rem;
+    margin: 1rem 0;
+    resize: none;
+}
+.contact-form form textarea{
+    padding: 10px;
+    width: 100%;
+    height: 10em;
+    border: 20px;
+}
+
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: transparent;
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: black;
+}
+.footer .social a{
+    font-size: 24px;
+    color: white;
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px rgba(38, 241, 248, 0.815), 0 0 10px white;
+    transition: 0.3s ease;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: white;
+    border: 2px solid rgba(38, 241, 248, 0.815);
+}
+.footer u1{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer u1 li a{
+    color: black;
+    border-bottom: 3px soild transparent;
+    transition: 0.3s ease;
+}
+.footer u1 li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 17px;
+    color: white;
+}
+h6{
+    text-align: center;
+    color: white;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #f5f5f5; 
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.profile-img-wrapper {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 80%;
+  height: auto;
+  max-width: 300px; 
+  border-radius: 50%; 
+  object-fit: cover;
+}
+
+.profile-content {
+  flex-basis: 55%; 
+}
+
+.name {
+  font-size: 65px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-size: 55px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 20px;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .profile-img-wrapper, .profile-content {
+    flex-basis: 100%;
+  }
+
+  .profile-img {
+    max-width: 200px;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .role {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+
+.about-section {
+  padding: 60px 20px;
+  background-color: transparent; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px 20px;
+}
+
+
+.section-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
+}
+
+
+.about-paragraph {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-paragraph {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+}
+
+
+.download-section {
+  text-align: center;
+  margin-top: -11%;
+  transform: translateX(3%);
+  transform: translateY(100%);
+}
+
+
+.download-btn {
+  display: inline-block;
+  padding: 15px 15px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px white;
+  border: #ddd;
+  border: 20px;
+  font-weight: bold;
+}
+
+
+.download-btn:hover {
+  background-color: rgb(129, 192, 243);
+  color: #000;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .download-btn {
+    font-size: 15px;
+    padding: 15px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+.btn-box{
+    width: 345px;
+    display: flex;
+    gap: 2em;
+    margin: 3em 0 4em;
+    
+    
+}
+.btn-1{
+    padding: 17px 18px;
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn-1:hover{
+    background-color: rgb(157, 206, 247);
+    color: var(--primary-color);
+    border: 2px soild var(--primary-color);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    align-items: center;
+    border: 10px solid rgb(157, 206, 247); 
+    border-radius: 25px; 
+    
+}
+
+.logo {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    
+}
+
+
+.nav-links li {
+    margin: 0 15px;
+    
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+   
+}
+.nav-links a:hover{
+  color: #007bff;
+}
+
+.close-icon {
+    display: none;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+
+.menu-icon {
+    display: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: 4rem; 
+    text-align: left;
+    color: white ;
+
+}
+h1 span{
+  color: #007bff;
+  text-align: center;
+}
+
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0; 
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+
+.animate_zoomIn {
+    display: inline-block;
+    animation: zoomIn 1.5s ease-out; 
+}
+
+
+.animate_infinite {
+    animation-iteration-count: infinite; 
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; 
+    }
+}
+
+
+.profile-content h3:hover {
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-content h1:hover .typing {
+    color: white;
+    border-color: white;
+}
+
+
+.role {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.role:hover {
+    color: #fff;
+}
+
+
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white; 
+    }
+}
+
+.animate_typing {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 2rem; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    border-right: 3px solid white; 
+    width: 0; 
+    animation: typing 3s steps(20) 1s forwards, blink 0.75s step-end infinite; 
+}
+
+.animate_infinite {
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; 
+}
+
+
+@media (max-width: 768px) {
+    .animate_typing {
+        font-size: 1.5rem;
+    }
+}
+
+ </style>
+
+
+</head>
+<body>
+
+    <div class="scroll-button">
+    <a href="#top"><i class="fa-regular fa-circle-up"></i></a>
+  </div>
+
+
+    <video autoplay muted loop id="video-background">
+        <source src="BG Video\Space BG.mp4 (2).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+
+   
+    
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#skillset">Skillset</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="certificate.html" target="_blank">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i> <!-- Font Awesome icon for the menu (hamburger) -->
+        </div>
+        <div class="close-icon" id="close-icon">
+            <i class="fas fa-times"></i> <!-- Font Awesome icon for the close button -->
+        </div>
+    </nav>
+    
+
+  
+  <section id="home" class="home-section">
+    <div class="container">
+      <div class="profile-container">
+        <div class="profile-img-wrapper">
+          <img src="profile 1.jpg" alt="Profile Picture" class="profile-img">
+        </div>
+        <div class="profile-content">
+    <h1 class="name">Hello, It's Me <br> <span class="animate_ _ _animated
+               animate_zoomIn
+               animate_infinite">Wince S</span></h1>
+    <h3 class="animate_ _ _animated
+               animate_typing
+               animate_infinite">
+    Front End Developer</h3>
+</div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <div class="download-section">
+    <a href="WINCE_S_Resume.pdf" class="download-btn">Resume Download</a>
+  </div>
+
+
+  <section id="about-me" class="about-section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-paragraph">
+        As a final-year B.Tech student in Information Technology, I've honed my skills in web design, mastering tools and languages such as HTML, CSS, JavaScript, Git, GitHub, and Visual Studio Code. 
+My strong technical foundation enables me to confidently approach and execute projects, ensuring high-quality outcomes. 
+I'm driven by a passion for continuous learning and adaptability, always eager to embrace the evolving world of software engineering. 
+My commitment to exploring new technologies fuels both my personal and professional growth. 
+I'd love to connect and collaborate on innovative projects, so feel free to reach out if you share the same enthusiasm.
+      </p>
+      </div>
+  </section>
+
+        <section id="skillset" class="container py-5">
+        <div class="container">
+            <h2 class="text-center">Skill Set</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="circle" data-percentage="90"></div>
+                    <h5>HTML</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="circle" data-percentage="86"></div>
+                    <h5>CSS</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="circle" data-percentage="78"></div>
+                    <h5>JavaScript</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="circle" data-percentage="50"></div>
+                    <h5>Python</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="projects" class="container py-5"
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row">
+                <!-- Repeat this block for each project -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\Portfolio.jpeg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Portfolio</h5>
+                            <p class="card-text">"Proficient in web development, showcasing innovative, user-centric projects that highlight my expertise."</p>
+                            <h4> Tech Stack : HTML,CSS</h4>
+                            <a class="social-icon"href=""><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\To - Do List.jpeg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">To-Do List</h5>
+                            <p class="card-text">"Built an interactive to-do list app with smooth task handling and local storage for efficient task management."</p>
+                            <h4>Tech Stack : HTML,CSS,Javascript</h4>
+                            <a class="social-icon" href="https://wince0727.github.io/To-Do-List/"><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com/wince0727/To-Do-List" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\Calculator.jpeg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Calculator</h5>
+                            <p class="card-text">"Developed a responsive web-based calculator with an intuitive interface for seamless arithmetic functionality."</p>
+                            <h4>Tech Stack : HTML,CSS,Javascript</h4>
+                            <a class="social-icon" href="https://wince0727.github.io/calculator/"><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com/wince0727/calculator" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\Weather App.jpeg" class="card-img-top" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather App</h5>
+                            <p class="card-text">Developed a sleek, user-friendly weather app delivering real-time updates and location-based forecasts.</p>
+                            <h4>Tech Stack : HTML,CSS,Javascript</h4>
+                            <a class="social-icon" href="https://wince0727.github.io/Weather-App/"><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com/wince0727/Weather-App" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\Landing Page.jpeg" class="card-img-top" alt="Project 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Landing Page</h5>
+                            <p class="card-text">I designed a vibrant, user-friendly landing page for a cupcake shop, with intuitive navigation to boost engagement."</p>
+                            <h4> Tech Stack : HTML,CSS,Javascript</h4>
+                            <a class="social-icon" href="https://wince0727.github.io/Landing-Page/"><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com/wince0727/Landing-Page" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="pro.imgs\E-commerce Product Page .jpeg" class="card-img-top" alt="Project 6">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Product Page</h5>
+                            <p class="card-text">Designed an engaging e-commerce t-shirt page with sharp visuals, detailed descriptions, and a seamless user experience.</p>
+                            <h4> Tech Stack : HTML,CSS,Javascript</h4>
+                            <a class="social-icon" href="https://wince0727.github.io/E-Commerce-Product-Page/"><i class='bx bxl-chrome'></i></a>
+                            <a class="social-icon" href="https://github.com/wince0727/E-Commerce-Product-Page" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects here -->
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="contact-form" id="contact">
+        <h2 class="contact-me">Contact <span>Me</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn-1">
+        </form>
+        
+    </section>
+    <div>
+        <h6><p>Thanks for visiting my portfolio! Feel free to reach out to me at:</p></h6>
+    </div>
+
+    <footer class="footer">
+       
+        <div class="social">
+            <a href="mailto:wincyselva2003@gmail.com"><i class='bx bxl-gmail'></i></a>
+            <a href="https://www.linkedin.com/in/wince-s-a7826528b/"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/"><i class='bx bxl-github'></i></a>
+        </div>
+        <p class="copyright">© 2024 All rights reserved by Wince S</p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  
+</body>
+</html>

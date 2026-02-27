@@ -99,20 +99,20 @@ animation: animate 3s linear forwards;
     color: #000;
 }
 
-.circle[data-percentage="95"] {
-background: conic-gradient(rgb(157, 206, 247) 0turn var(--python_progress), #FAF9F6 0turn);
-}
-
 .circle[data-percentage="90"] {
-background: conic-gradient(rgb(157, 206, 247) 0turn var(--html_progress), #FAF9F6 0turn);
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--Python_progress), #FAF9F6 0turn);
 }
 
-.circle[data-percentage="78"] {
-background: conic-gradient(rgb(157, 206, 247) 0turn var(--css_progress), #FAF9F6 0turn);
+.circle[data-percentage="86"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--SQL_progress), #FAF9F6 0turn);
 }
 
-.circle[data-percentage="50"] {
-background: conic-gradient(rgb(157, 206, 247) 0turn var(--js_progress), #FAF9F6 0turn);
+.circle[data-percentage="92"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--Excel_progress), #FAF9F6 0turn);
+}
+
+.circle[data-percentage="95"] {
+background: conic-gradient(rgb(157, 206, 247) 0turn var(--PowerBI_progress), #FAF9F6 0turn);
 }
 
 h4 {
@@ -123,10 +123,10 @@ h4 {
 
 @keyframes animate{
     100%{
-        --python_progress: calc(calc(95 / 100) * 360deg);
-        --html_progress: calc(calc(90 / 100) * 360deg);
-        --css_progress:calc(calc(78 / 100) * 360deg);
-        --js_progress:  calc(calc(50/ 100) * 360deg);
+        --Python_progress: calc(calc(90 / 100) * 360deg);
+        --SQL_progress: calc(calc(86 / 100) * 360deg);
+        --Excel_progress: calc(calc(92 / 100) * 360deg);
+        --PowerBI_progress: calc(calc(95/ 100) * 360deg);
     }
 }
 
@@ -380,11 +380,12 @@ body, html {
 }
 
 .profile-img {
-  width: 80%;
-  height: auto;
-  max-width: 300px; 
-  border-radius: 50%; 
+  width:350px;          /* Zoom size */
+  height: 400px;         /* Same height for perfect circle */
+  border-radius: 50%;
   object-fit: cover;
+  border: none;          /* Remove border */
+  box-shadow: #FFFF;      /* Remove white glow */
 }
 
 .profile-content {
@@ -420,7 +421,10 @@ body, html {
   }
 
   .profile-img {
-    max-width: 200px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .name {
@@ -796,7 +800,7 @@ h1 span{
     <div class="container">
       <div class="profile-container">
         <div class="profile-img-wrapper">
-          <img src="profile 1.jpg" alt="Profile Picture" class="profile-img">
+          <img src="Profile.jpeg" alt="Profile Picture" class="profile-img">
         </div>
         <div class="profile-content">
     <h1 class="name">Hello, It's Me <br> <span class="animate_ _ _animated
@@ -979,7 +983,6 @@ h1 span{
   
 </body>
 </html>
-
 
 
 
